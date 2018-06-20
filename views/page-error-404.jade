@@ -1,0 +1,60 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="utf-8")
+        |     
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        // Tell the browser to be responsive to screen width
+        meta(name="viewport", content="width=device-width, initial-scale=1")
+        |     
+        meta(name="description", content="")
+        |     
+        meta(name="author", content="")
+        // Favicon icon
+        link(rel='icon', type='image/svg', sizes='16x16', href='images/logo.svg')
+        title Student Recognition
+        // Bootstrap Core CSS
+        link(href="stylesheets/lib/bootstrap/bootstrap.min.css", rel="stylesheet")
+        // Custom CSS
+        link(href="stylesheets/helper.css", rel="stylesheet")
+        |     
+        link(href="stylesheets/style.css", rel="stylesheet")
+        // HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries
+        // WARNING: Respond.js doesn't work if you view the page via file:**
+        //if lt IE 9
+          script(src="https:**oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js")
+          |     
+          script(src="https:**oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js")
+    body.fix-header.fix-sidebar
+        // Preloader - style you can find in spinners.css
+        .preloader
+            svg.circular(viewbox="25 25 50 50")
+                circle.path(cx="50", cy="50", r="20", fill="none", stroke-width="2", stroke-miterlimit="10")
+        // Main wrapper
+        #wrapper.error-page
+            .error-box
+                .error-body.text-center
+                    h1 404
+                    |                
+                    h3.text-uppercase Page not found 
+                    |                 
+                    p.text-muted.m-t-30.m-b-30 No encontramos lo que buscabas,
+                    |                 
+                    a.btn.btn-info.btn-rounded.waves-effect.waves-light.m-b-40(href="/") Volver al inicio
+                |             
+                footer.footer.text-center © 2018 Student Recognition.
+        // End Wrapper
+        // All Jquery
+        script(src="javascripts/lib/jquery/jquery.min.js")
+        // Bootstrap tether Core JavaScript
+        script(src="javascripts/lib/bootstrap/js/popper.min.js")
+        |     
+        script(src="javascripts/lib/bootstrap/js/bootstrap.min.js")
+        // slimscrollbar scrollbar JavaScript
+        script(src="javascripts/jquery.slimscroll.js")
+        // Menu sidebar
+        script(src="javascripts/sidebarmenu.js")
+        // stickey kit
+        script(src="javascripts/lib/sticky-kit-master/dist/sticky-kit.min.js")
+        // Custom JavaScript
+        script(src="javascripts/scripts.js")

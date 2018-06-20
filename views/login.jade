@@ -1,0 +1,38 @@
+extends layout
+
+block content
+    // Preloader - style you can find in spinners.css
+    .preloader
+      svg.circular(viewbox="25 25 50 50")
+        circle.path(cx="50", cy="50", r="20", fill="none", stroke-width="2", stroke-miterlimit="10")
+    // Main wrapper
+    #main-wrapper
+      .unix-login
+        .container-fluid
+          .row.justify-content-center
+            .col-lg-4
+              .login-content.card
+                .login-form
+                  h4 Iniciar Sesión
+                  |                                 
+                  form
+                    .form-group
+                      label Correo Electrónico
+                      |                                         
+                      input.form-control(type="email")
+                    |                                     
+                    .form-group
+                      label Contraseña
+                      |                                         
+                      input.form-control(type="password")
+                    |                                     
+                    .checkbox
+                      label
+                        input(type="checkbox")
+                        |  Recuérdame
+                      |                                         
+                      label.pull-right
+                        a(href="/") ¿Olvidaste tu contraseña?
+                    |                                     
+                    button.btn.btn-primary.btn-flat.m-b-30.m-t-30(type="submit") Iniciar Sesión
+    // End Wrapper

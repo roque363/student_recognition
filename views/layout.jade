@@ -1,7 +1,60 @@
 doctype html
-html
-  head
-    title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
-  body
-    block content
+html(lang='es')
+	head
+		meta(charset='utf-8')
+		meta(http-equiv='X-UA-Compatible', content='IE=edge')
+		// Tell the browser to be responsive to screen width
+		meta(name='viewport', content='width=device-width, initial-scale=1')
+		meta(name='description', content='')
+		meta(name='author', content='')
+		// Favicon icon
+		link(rel='icon', type='image/png', sizes='16x16', href='images/logo_icon.png')
+		title Student Recognition
+		// Bootstrap Core CSS
+		link(href='stylesheets/lib/bootstrap/bootstrap.min.css', rel='stylesheet')
+		// Font Awesome
+		link(rel='stylesheet', href='https://use.fontawesome.com/releases/v5.0.13/css/all.css', integrity='sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp', crossorigin='anonymous')
+		// Custom CSS
+		link(href='stylesheets/lib/calendar2/semantic.ui.min.css', rel='stylesheet')
+		link(href='stylesheets/lib/calendar2/pignose.calendar.min.css', rel='stylesheet')
+		link(href='stylesheets/lib/owl.carousel.min.css', rel='stylesheet')
+		link(href='stylesheets/lib/owl.theme.default.min.css', rel='stylesheet')
+		link(href='stylesheets/helper.css', rel='stylesheet')
+		link(href='stylesheets/style.css', rel='stylesheet')
+		// HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries
+		// WARNING: Respond.js doesn't work if you view the page via file:**
+		//if lt IE 9
+			script(src='https:**oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js')
+			script(src='https:**oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js')
+	body.fix-header.fix-sidebar
+		block content
+		// CONTENIDO DE LAS PAGINAS
+		// All Jquery
+		script(src='javascripts/lib/jquery/jquery.min.js')
+		// Bootstrap tether Core JavaScript
+		script(src='javascripts/lib/bootstrap/js/popper.min.js')
+		script(src='javascripts/lib/bootstrap/js/bootstrap.min.js')
+		// slimscrollbar scrollbar JavaScript
+		script(src='javascripts/jquery.slimscroll.js')
+		// Menu sidebar
+		script(src='javascripts/sidebarmenu.js')
+		// stickey kit
+		script(src='javascripts/lib/sticky-kit-master/dist/sticky-kit.min.js')
+		// Custom JavaScript
+		// Amchart
+		script(src='javascripts/lib/morris-chart/raphael-min.js')
+		script(src='javascripts/lib/morris-chart/morris.js')
+		script(src='javascripts/lib/morris-chart/dashboard1-init.js')
+		script(src='javascripts/lib/calendar-2/moment.latest.min.js')
+		// scripit init
+		script(src='javascripts/lib/calendar-2/semantic.ui.min.js')
+		// scripit init
+		script(src='javascripts/lib/calendar-2/prism.min.js')
+		// scripit init
+		script(src='javascripts/lib/calendar-2/pignose.calendar.min.js')
+		// scripit init
+		script(src='javascripts/lib/calendar-2/pignose.init.js')
+		script(src='javascripts/lib/owl-carousel/owl.carousel.min.js')
+		script(src='javascripts/lib/owl-carousel/owl.carousel-init.js')
+		// scripit init
+		script(src='javascripts/scripts.js')
