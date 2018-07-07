@@ -1,5 +1,9 @@
 $(function() {
     "use strict";
+    
+    $('#consoleClick').on('click', function() {
+        console.log("Linder"); 
+    });
     $(function() {
             $(".preloader").fadeOut();
         }),

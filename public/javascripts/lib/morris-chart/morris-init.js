@@ -1,53 +1,53 @@
 // Dashboard 1 Morris-chart
-$( function () {
-	"use strict";
-	// Morris bar chart
-	Morris.Bar( {
-		element: 'morris-bar-chart',
-		data: [ {
-			y: '2006',
-			a: 100,
-			b: 90,
-			c: 60
-        }, {
-			y: '2007',
-			a: 75,
-			b: 65,
-			c: 40
-        }, {
-			y: '2008',
-			a: 50,
-			b: 40,
-			c: 30
-        }, {
-			y: '2009',
-			a: 75,
-			b: 65,
-			c: 40
-        }, {
-			y: '2010',
-			a: 50,
-			b: 40,
-			c: 30
-        }, {
-			y: '2011',
-			a: 75,
-			b: 65,
-			c: 40
-        }, {
-			y: '2012',
-			a: 100,
-			b: 90,
-			c: 40
-        } ],
-		xkey: 'y',
-		ykeys: [ 'a', 'b', 'c' ],
-		labels: [ 'A', 'B', 'C' ],
-		barColors: [ '#26DAD2', '#fc6180', '#4680ff' ],
-		hideHover: 'auto',
-		gridLineColor: '#eef0f2',
-		resize: true
-	} );
+	$( function () {
+		"use strict";
+		// Morris bar chart
+		Morris.Bar( {
+			element: 'morris-bar-chart',
+			data: [ {
+				y: '2006',
+				a: 100,
+				b: 90,
+				c: 60
+	        }, {
+				y: '2007',
+				a: 75,
+				b: 65,
+				c: 40
+	        }, {
+				y: '2008',
+				a: 50,
+				b: 40,
+				c: 30
+	        }, {
+				y: '2009',
+				a: 75,
+				b: 65,
+				c: 40
+	        }, {
+				y: '2010',
+				a: 50,
+				b: 40,
+				c: 30
+	        }, {
+				y: '2011',
+				a: 75,
+				b: 65,
+				c: 40
+	        }, {
+				y: '2012',
+				a: 100,
+				b: 90,
+				c: 40
+	        } ],
+			xkey: 'y',
+			ykeys: [ 'a', 'b', 'c' ],
+			labels: [ 'A', 'B', 'C' ],
+			barColors: [ '#26DAD2', '#fc6180', '#4680ff' ],
+			hideHover: 'auto',
+			gridLineColor: '#eef0f2',
+			resize: true
+		} );
 
 	// LINE CHART
 	var line = new Morris.Line( {
@@ -104,6 +104,19 @@ $( function () {
 		hideHover: 'auto'
 	} );
 	// Morris donut chart
+	
+
+	Morris.Bar( {
+		element: 'morris-bar-chart2',
+		data: item,
+		xkey: 'y',
+		ykeys: [ 'a', 'b', 'c' ],
+		labels: [ 'A', 'B', 'C' ],
+		barColors: [ '#26DAD2', '#fc6180', '#4680ff' ],
+		hideHover: 'auto',
+		gridLineColor: '#eef0f2',
+		resize: true
+	} );
 
 	Morris.Donut( {
 		element: 'morris-donut-chart',

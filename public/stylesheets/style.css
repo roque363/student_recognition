@@ -86,6 +86,23 @@
 * {
   outline: none;
 }
+
+/*Estilos customisados*/
+.opciones{
+  width: 10%;
+  word-wrap: break-word;
+}
+
+.opciones2{
+  width: 12%;
+  word-wrap: break-word;
+}
+
+.opciones3{
+  width: 8%;
+  word-wrap: break-word;
+}
+
 body {
   background: #fff;
   font-family: 'Open Sans', sans-serif;

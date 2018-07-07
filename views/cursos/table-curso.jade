@@ -15,10 +15,6 @@ html(lang='es')
 		// Font Awesome
 		link(rel='stylesheet', href='https://use.fontawesome.com/releases/v5.0.13/css/all.css', integrity='sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp', crossorigin='anonymous')
 		// Custom CSS
-		link(href='stylesheets/lib/calendar2/semantic.ui.min.css', rel='stylesheet')
-		link(href='stylesheets/lib/calendar2/pignose.calendar.min.css', rel='stylesheet')
-		link(href='stylesheets/lib/owl.carousel.min.css', rel='stylesheet')
-		link(href='stylesheets/lib/owl.theme.default.min.css', rel='stylesheet')
 		link(href='stylesheets/helper.css', rel='stylesheet')
 		link(href='stylesheets/style.css', rel='stylesheet')
 		// HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries
@@ -39,35 +35,84 @@ html(lang='es')
 					// Logo
 					.navbar-header
 						a.navbar-brand(href='/')
-							// Logo icon
-							b
-								img.dark-logo(src='images/logo.svg', alt='homepage')
-							// End Logo icon
-							// Logo text
-							span
-								img.dark-logo(src='images/logo-text.png', alt='homepage')
+								// Logo icon
+								b
+									img.dark-logo(src='images/logo.svg', alt='homepage')
+								// End Logo icon
+								// Logo text
+								span
+									img.dark-logo(src='images/logo-text.png', alt='homepage')
 					// End Logo
 					.navbar-collapse
 						// toggle and nav items
 						ul.navbar-nav.mr-auto.mt-md-0
-							// Main 
+							// This is
 							li.nav-item
 								a.nav-link.nav-toggler.hidden-md-up.text-muted(href='javascript:void(0)')
 									i.mdi.mdi-menu
 							li.nav-item.m-l-10
 								a.nav-link.sidebartoggler.hidden-sm-down.text-muted(href='javascript:void(0)')
 									i.ti-menu
-							// End de Main
 						// User profile and search
 						ul.navbar-nav.my-lg-0
-							// Busqueda
+							// Search
 							li.nav-item.hidden-sm-down.search-box
 								a.nav-link.hidden-sm-down.text-muted(href='javascript:void(0)')
 									i.ti-search
 								form.app-search
-									input.form-control(type='text', placeholder='Busca aqui')
+									input.form-control(type='text', placeholder='Search here')
 									a.srh-btn
 										i.ti-close
+							// Comment
+							li.nav-item.dropdown
+								a.nav-link.dropdown-toggle.text-muted.text-muted(href='#', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+									i.fa.fa-bell
+									.notify
+										span.heartbit
+										span.point
+								.dropdown-menu.dropdown-menu-right.mailbox.animated.zoomIn
+									ul
+										li
+											.drop-title Notifications
+										li
+											.message-center
+												// Message
+												a(href='#')
+													.btn.btn-danger.btn-circle.m-r-10
+														i.fa.fa-link
+													.mail-contnet
+														h5 This is title
+														span.mail-desc Just see the my new admin!
+														span.time 9:30 AM
+												// Message
+												a(href='#')
+													.btn.btn-success.btn-circle.m-r-10
+														i.ti-calendar
+													.mail-contnet
+														h5 This is another title
+														span.mail-desc Just a reminder that you have event
+														span.time 9:10 AM
+												// Message
+												a(href='#')
+													.btn.btn-info.btn-circle.m-r-10
+														i.ti-settings
+													.mail-contnet
+														h5 This is title
+														span.mail-desc You can customize this template as you want
+														span.time 9:08 AM
+												// Message
+												a(href='#')
+													.btn.btn-primary.btn-circle.m-r-10
+														i.ti-user
+													.mail-contnet
+														h5 This is another title
+														span.mail-desc Just see the my admin!
+														span.time 9:02 AM
+										li
+											a.nav-link.text-center(href='javascript:void(0);')
+												strong Check all notifications
+												i.fa.fa-angle-right
+							// End Comment
 							// Profile
 							li.nav-item.dropdown
 								a.nav-link.dropdown-toggle.text-muted(href='#', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
@@ -138,65 +183,54 @@ html(lang='es')
 				// Bread crumb
 				.row.page-titles
 					.col-md-5.align-self-center
-						h3.text-primary Escritorio
+						h3.text-primary Lista de Cursos
 					.col-md-7.align-self-center
 						ol.breadcrumb
 							li.breadcrumb-item
 								a(href='javascript:void(0)') Escritorio
+							li.breadcrumb-item.active Cursos
 				// End Bread crumb
 				// Container fluid
 				.container-fluid
 					// Start Page Content
 					.row
-						.col-md-3
-							.card.p-30
-								.media
-									.media-left.meida.media-middle
-										span
-											i.fa.fa-user.f-s-40.color-danger
-									.media-body.media-text-right
-										h2 16
-										p.m-b-0 Usuarios
-						.col-md-3
-							.card.p-30
-								.media
-									.media-left.meida.media-middle
-										span
-											i.fas.fa-book.f-s-40.color-primary
-									.media-body.media-text-right
-										h2 24
-										p.m-b-0 Cursos - Aulas
-						.col-md-3
-							.card.p-30
-								.media
-									.media-left.meida.media-middle
-										span
-											i.fas.fa-images.f-s-40.color-warning
-									.media-body.media-text-right
-										h2 53
-										p.m-b-0 Fotos
-						.col-md-3
-							.card.p-30
-								.media
-									.media-left.meida.media-middle
-										span
-											i.far.fa-smile.f-s-40.color-danger
-									.media-body.media-text-right
-										h2 847
-										p.m-b-0 Emociones
-					.row.bg-white.m-l-0.m-r-0.box-shadow
-						// column
-						.col-lg-12
+						.col-12
 							.card
 								.card-body
-									h4.card-title Datos
-									for item in data
-										#morris-bar-chart2
-						// column
-						
-						// End PAge Content
-						// End Container fluid
-						// footer
+									h4.card-title Lista de Cursos
+									.table-responsive
+										table#myTable.table.table-bordered.table-striped
+											thead
+												tr
+													th Curso
+													th Carrera
+													th Ciclo
+													th Año
+													th Aula
+													th Hora Inicio
+													th Hora Fin
+													th Editar
+													th Eliminar
+											tbody
+												for item in data
+													tr
+														td= item.nombre_curso
+														td= item.carrera
+														td= item.ciclo
+														td.opciones3= item.year
+														td= item.aula
+														td.opciones2= item.horaI
+														td.opciones2= item.horaF
+														td.opciones
+															a.btn.btn-info.btn-md(href='/curso_detail?_id='+item.key, role='button')
+																i.fas.fa-pencil-alt
+														td.opciones
+															form(method="post", action="/curso_remove?_id="+item.key)
+																a.btn.btn-danger.btn-md.btn-block(href="javascript:void(0);", onclick="if(confirm('¿Está seguro que desea eliminar el curso "+item.nombre_curso+"?')){this.parentNode.submit();}")
+																	i.fas.fa-trash-alt
+					// End PAge Content
+				// End Container fluid
+				// footer
 				footer.footer
 					| © 2018 All rights reserved. Template designed by 
 					a(href='https://colorlib.com') Colorlib
@@ -215,37 +249,16 @@ html(lang='es')
 		// stickey kit
 		script(src='javascripts/lib/sticky-kit-master/dist/sticky-kit.min.js')
 		// FireBase
-		script(src='https://www.gstatic.com/firebasejs/5.0.4/firebase.js')
-		// Amchart
-		script(src='javascripts/lib/morris-chart/raphael-min.js')
-		script(src='javascripts/lib/morris-chart/morris.js')
-		script(src="javascripts/lib/morris-chart/morris-init.js")
-		script(src='javascripts/lib/morris-chart/dashboard1-init.js')
-		script(src='javascripts/lib/calendar-2/moment.latest.min.js')
-		// scripit init
-		script(src='javascripts/lib/calendar-2/semantic.ui.min.js')
-		// scripit init
-		script(src='javascripts/lib/calendar-2/prism.min.js')
-		// scripit init
-		script(src='javascripts/lib/calendar-2/pignose.calendar.min.js')
-		script.
-			new Morris.Bar( {
-				element: 'morris-bar-chart2',
-				data: data,
-				xkey: 'y',
-				ykeys: [ 'enfado', 'desprecio','asco','miedo','feliz','neutral','tristeza','sorpresa'],
-				labels: [ 'Enfado', 'Desprecio','Asco','Miedo','Feliz','Neutral','Tristeza','Sorpresa'],
-				barColors: [ '#26DAD2', '#fc6180', '#4680ff' ],
-				hideHover: 'auto',
-				gridLineColor: '#eef0f2',
-				resize: true
-			} );
-		// scripit init
-		script(src='javascripts/lib/calendar-2/pignose.init.js')
-		script(src='javascripts/lib/owl-carousel/owl.carousel.min.js')
-		script(src='javascripts/lib/owl-carousel/owl.carousel-init.js')
-		script(src="javascripts/lib/peitychart/jquery.peity.min.js")
-		script(src="javascripts/lib/peitychart/peitychart.init.js")
-		// scripit init
+		script(src="https://www.gstatic.com/firebasejs/4.12.1/firebase-app.js")
+		script(src="https://www.gstatic.com/firebasejs/4.12.1/firebase-database.js")
+		// Custom JavaScript
 		script(src='javascripts/scripts.js')
-
+		script(src='javascripts/lib/datatables/datatables.min.js')
+		script(src='javascripts/lib/datatables/cdn.datatables.net/buttons/1.2.2/js/dataTables.buttons.min.js')
+		script(src='javascripts/lib/datatables/cdn.datatables.net/buttons/1.2.2/js/buttons.flash.min.js')
+		script(src='javascripts/lib/datatables/cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js')
+		script(src='javascripts/lib/datatables/cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/pdfmake.min.js')
+		script(src='javascripts/lib/datatables/cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js')
+		script(src='javascripts/lib/datatables/cdn.datatables.net/buttons/1.2.2/js/buttons.html5.min.js')
+		script(src='javascripts/lib/datatables/cdn.datatables.net/buttons/1.2.2/js/buttons.print.min.js')
+		script(src='javascripts/lib/datatables/datatables-init.js')

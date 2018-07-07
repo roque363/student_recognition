@@ -15,24 +15,17 @@ block content
                 .login-form
                   h4 Iniciar Sesión
                   |                                 
-                  form
+                  form(method="post", action="/auth") 
                     .form-group
-                      label Correo Electrónico
+                      label(for='txtEmail') Correo Electrónico
                       |                                         
-                      input.form-control(type="email")
+                      input#txtEmail.form-control(type="email", name='txtEmail')
                     |                                     
                     .form-group
-                      label Contraseña
+                      label(for='txtPassword') Contraseña
                       |                                         
-                      input.form-control(type="password")
+                      input#txtPassword.form-control(type="password", name='txtPassword')
                     |                                     
-                    .checkbox
-                      label
-                        input(type="checkbox")
-                        |  Recuérdame
-                      |                                         
-                      label.pull-right
-                        a(href="/") ¿Olvidaste tu contraseña?
-                    |                                     
-                    button.btn.btn-primary.btn-flat.m-b-30.m-t-30(type="submit") Iniciar Sesión
-    // End Wrapper
+                    button#btnLogin.btn.btn-primary.btn-flat(type='submit') Iniciar Sesión
+    // End 
+ 

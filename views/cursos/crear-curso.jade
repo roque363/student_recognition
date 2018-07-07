@@ -1,0 +1,277 @@
+doctype html
+html(lang="es")
+	head
+		meta(charset="utf-8")
+		meta(http-equiv="X-UA-Compatible" content="IE=edge")
+		// Tell the browser to be responsive to screen width
+		meta(name="viewport" content="width=device-width, initial-scale=1")
+		meta(name="description" content="")
+		meta(name="author" content="")
+		// Favicon icon
+		link(rel='icon', type='image/png', sizes='16x16', href='images/logo_icon.png')
+		title Student Recognition
+		// Bootstrap Core CSS
+		link(href="stylesheets/lib/bootstrap/bootstrap.min.css" rel="stylesheet")
+		// Font Awesome
+		link(rel='stylesheet', href='https://use.fontawesome.com/releases/v5.0.13/css/all.css', integrity='sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp', crossorigin='anonymous')
+		// Custom CSS
+		link(href="stylesheets/helper.css" rel="stylesheet")
+		link(href="stylesheets/style.css" rel="stylesheet")
+		// HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries
+		// WARNING: Respond.js doesn't work if you view the page via file:**
+		//if lt IE 9
+			script(src="https:**oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js")
+			script(src="https:**oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js")
+	body.fix-header.fix-sidebar
+		// Preloader - style you can find in spinners.css
+		.preloader
+			svg.circular(viewbox="25 25 50 50")
+				circle.path(cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10")
+		// Main wrapper
+		#main-wrapper
+			// header header
+			.header
+				nav.navbar.top-navbar.navbar-expand-md.navbar-light
+					// Logo
+					.navbar-header
+						a.navbar-brand(href='/')
+								// Logo icon
+								b
+									img.dark-logo(src='images/logo.svg', alt='homepage')
+								// End Logo icon
+								// Logo text
+								span
+									img.dark-logo(src='images/logo-text.png', alt='homepage')
+					// End Logo
+					.navbar-collapse
+						// toggle and nav items
+						ul.navbar-nav.mr-auto.mt-md-0
+							// This is
+							li.nav-item
+								a.nav-link.nav-toggler.hidden-md-up.text-muted(href='javascript:void(0)')
+									i.mdi.mdi-menu
+							li.nav-item.m-l-10
+								a.nav-link.sidebartoggler.hidden-sm-down.text-muted(href='javascript:void(0)')
+									i.ti-menu
+						// User profile and search
+						ul.navbar-nav.my-lg-0
+							// Search
+							li.nav-item.hidden-sm-down.search-box
+								a.nav-link.hidden-sm-down.text-muted(href='javascript:void(0)')
+									i.ti-search
+								form.app-search
+									input.form-control(type='text', placeholder='Search here')
+									a.srh-btn
+										i.ti-close
+							// Comment
+							li.nav-item.dropdown
+								a.nav-link.dropdown-toggle.text-muted.text-muted(href='#', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+									i.fa.fa-bell
+									.notify
+										span.heartbit
+										span.point
+								.dropdown-menu.dropdown-menu-right.mailbox.animated.zoomIn
+									ul
+										li
+											.drop-title Notifications
+										li
+											.message-center
+												// Message
+												a(href='#')
+													.btn.btn-danger.btn-circle.m-r-10
+														i.fa.fa-link
+													.mail-contnet
+														h5 This is title
+														span.mail-desc Just see the my new admin!
+														span.time 9:30 AM
+												// Message
+												a(href='#')
+													.btn.btn-success.btn-circle.m-r-10
+														i.ti-calendar
+													.mail-contnet
+														h5 This is another title
+														span.mail-desc Just a reminder that you have event
+														span.time 9:10 AM
+												// Message
+												a(href='#')
+													.btn.btn-info.btn-circle.m-r-10
+														i.ti-settings
+													.mail-contnet
+														h5 This is title
+														span.mail-desc You can customize this template as you want
+														span.time 9:08 AM
+												// Message
+												a(href='#')
+													.btn.btn-primary.btn-circle.m-r-10
+														i.ti-user
+													.mail-contnet
+														h5 This is another title
+														span.mail-desc Just see the my admin!
+														span.time 9:02 AM
+										li
+											a.nav-link.text-center(href='javascript:void(0);')
+												strong Check all notifications
+												i.fa.fa-angle-right
+							// End Comment
+							// Profile
+							li.nav-item.dropdown
+								a.nav-link.dropdown-toggle.text-muted(href='#', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+									i.fas.fa-user
+								.dropdown-menu.dropdown-menu-right.animated.zoomIn
+									ul.dropdown-user
+										li
+											a(href='/profile')
+												i.ti-user
+												|  Profile
+										li
+											a(href='#')
+												i.ti-settings
+												|  Setting
+										li
+											a(href='/salir')
+												i.fa.fa-power-off
+												|  Logout
+			// End header header
+			// Left Sidebar
+			.left-sidebar
+				// Sidebar scroll
+				.scroll-sidebar
+					// Sidebar navigation
+					nav.sidebar-nav
+						ul#sidebarnav
+							li.nav-devider
+							li.nav-label INICIO
+							li
+								a(href='/', aria-expanded='false')
+									i.fas.fa-home
+									span.hide-menu
+										| Escritorio
+							li.nav-label ANALISIS
+							li
+								a.has-arrow(href='#', aria-expanded='false')
+									i.fas.fa-table
+									span.hide-menu Emociones
+								ul.collapse(aria-expanded='false')
+									li
+										a(href='/ver_emociones') Ver emociones
+							li.nav-label CURSOS
+							li
+								a.has-arrow(href='#', aria-expanded='false')
+									i.fas.fa-book
+									span.hide-menu Cursos
+								ul.collapse(aria-expanded='false')
+									li
+										a(href='/curso_lista') Ver cursos
+									li
+										a(href='/curso_crear') Crear curso
+							li.nav-label USUARIOS
+							li
+								a.has-arrow(href='#', aria-expanded='false')
+									i.fas.fa-user-tie
+									span.hide-menu
+										| Profesores
+								ul.collapse(aria-expanded='false')
+									li
+										a(href='/profesor_lista') Lista de profesores
+									li
+										a(href='/profesor_crear') Crear profesor
+					// End Sidebar navigation
+				// End Sidebar scroll
+			// End Left Sidebar
+			// Page wrapper
+			.page-wrapper
+				// Bread crumb
+				.row.page-titles
+					.col-md-5.align-self-center
+						h3.text-primary Crear Curso
+					.col-md-7.align-self-center
+						ol.breadcrumb
+							li.breadcrumb-item
+								a(href="javascript:void(0)") Inicio
+							li.breadcrumb-item.active Curso
+				// End Bread crumb
+				// Container fluid
+				.container-fluid
+					// Start Page Content
+					.row.justify-content-center
+						.col-lg-6
+							.card.card-outline-primary
+								.card-header
+									h4.m-b-0.text-white Datos del Curso
+								.card-body
+									.form-validation
+										hr
+										form.form-valide(action="/crear" method="post")
+											.form-group.row
+												label.col-lg-4.col-form-label(for="val_nombre")
+													| Nombre
+													span.text-danger 
+												.col-lg-6
+													input#val_nombre.form-control(type="text" name="val_nombre")
+											.form-group.row
+												label.col-lg-4.col-form-label(for="val_carrera")
+													| Carrera
+													span.text-danger 
+												.col-lg-6
+													input#val_carrera.form-control(type="text" name="val_carrera")
+											.form-group.row
+												label.col-lg-4.col-form-label(for="val_aula")
+													| Aula
+													span.text-danger 
+												.col-lg-6
+													input#val_aula.form-control(type="text" name="val_aula")
+											.form-group.row
+												label.col-lg-4.col-form-label(for="val_ciclo")
+													| Ciclo
+													span.text-danger 
+												.col-lg-6
+													input#val_ciclo.form-control(type="text" name="val_ciclo")
+											.form-group.row
+												label.col-lg-4.col-form-label(for="val_year")
+													| Año
+													span.text-danger 
+												.col-lg-6
+													input#val_year.form-control(type="text" name="val_year")
+											.form-group.row
+												label.col-lg-4.col-form-label(for="val_fehaI")
+													| Hora Inicial
+													span.text-danger 
+												.col-lg-6
+													input#val_fehaI.form-control(type="text" name="val_fehaI")
+											.form-group.row
+												label.col-lg-4.col-form-label(for="val_fehaF")
+													| Hora Final
+													span.text-danger 
+												.col-lg-6
+													input#val_fehaF.form-control(type="text" name="val_fehaF")
+											.form-group.row
+												.col-lg-8.ml-auto
+													button.btn.btn-primary(type="submit") Crear Curso
+					// End PAge Content
+				// End Container fluid
+				// footer
+				footer.footer
+					| © 2018 All rights reserved. Template designed by 
+					a(href="https://colorlib.com") Colorlib
+				// End footer
+			// End Page wrapper
+		// End Wrapper
+		// All Jquery
+		script(src="javascripts/lib/jquery/jquery.min.js")
+		// Bootstrap tether Core JavaScript
+		script(src="javascripts/lib/bootstrap/js/popper.min.js")
+		script(src="javascripts/lib/bootstrap/js/bootstrap.min.js")
+		// slimscrollbar scrollbar JavaScript
+		script(src="javascripts/jquery.slimscroll.js")
+		// Menu sidebar
+		script(src="javascripts/sidebarmenu.js")
+		// stickey kit
+		script(src="javascripts/lib/sticky-kit-master/dist/sticky-kit.min.js")
+		// Form validation
+		script(src="javascripts/lib/form-validation/jquery.validate.min.js")
+		script(src="javascripts/lib/form-validation/jquery.validate-init.js")
+		// FireBase
+		script(src="https://www.gstatic.com/firebasejs/4.12.1/firebase-app.js")
+		script(src="https://www.gstatic.com/firebasejs/4.12.1/firebase-database.js")
+		// Custom JavaScript
+		script(src="javascripts/scripts.js")

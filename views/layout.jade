@@ -40,10 +40,12 @@ html(lang='es')
 		script(src='javascripts/sidebarmenu.js')
 		// stickey kit
 		script(src='javascripts/lib/sticky-kit-master/dist/sticky-kit.min.js')
-		// Custom JavaScript
+		// FireBase
+		script(src='https://www.gstatic.com/firebasejs/5.0.4/firebase.js')
 		// Amchart
 		script(src='javascripts/lib/morris-chart/raphael-min.js')
 		script(src='javascripts/lib/morris-chart/morris.js')
+		script(src="javascripts/lib/morris-chart/morris-init.js")
 		script(src='javascripts/lib/morris-chart/dashboard1-init.js')
 		script(src='javascripts/lib/calendar-2/moment.latest.min.js')
 		// scripit init
@@ -52,9 +54,23 @@ html(lang='es')
 		script(src='javascripts/lib/calendar-2/prism.min.js')
 		// scripit init
 		script(src='javascripts/lib/calendar-2/pignose.calendar.min.js')
+		script.
+			new Morris.Bar( {
+				element: 'morris-bar-chart2',
+				data: data,
+				xkey: 'y',
+				ykeys: [ 'a', 'b', 'c' ],
+				labels: [ 'A', 'B', 'C' ],
+				barColors: [ '#26DAD2', '#fc6180', '#4680ff' ],
+				hideHover: 'auto',
+				gridLineColor: '#eef0f2',
+				resize: true
+			} );
 		// scripit init
 		script(src='javascripts/lib/calendar-2/pignose.init.js')
 		script(src='javascripts/lib/owl-carousel/owl.carousel.min.js')
 		script(src='javascripts/lib/owl-carousel/owl.carousel-init.js')
+		script(src="javascripts/lib/peitychart/jquery.peity.min.js")
+		script(src="javascripts/lib/peitychart/peitychart.init.js")
 		// scripit init
 		script(src='javascripts/scripts.js')

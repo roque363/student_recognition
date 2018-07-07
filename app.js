@@ -4,9 +4,14 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var firebase = require("firebase");
+require('firebase/auth');
+require('firebase/database');
 
-var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var userAuth = require("./auth.js");
+var user = require("./models/user.js");
+var curso = require("./models/curso.js");
+var emotion = require("./models/emotion.js");
 
 var app = express();
 
@@ -20,6 +25,10 @@ var config = {
   messagingSenderId: "251451876031"
 };
 firebase.initializeApp(config);
+userAuth.setModel(firebase);
+user.setModel(firebase);
+curso.setModel(firebase);
+emotion.setModel(firebase);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -31,16 +40,42 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
+// Ruta para la prueba del tema
 app.get('/prueba',function(req,res) {
   res.render('prueba');
 });
 
+// User authentication
+//app.get('/login', userAuth.prueba2);
 app.get('/login',function(req,res) {
   res.render('login');
 });
+app.post('/auth', userAuth.login);
+app.get('/salir', userAuth.logout);
+
+//app.get('/', userAuth.prueba2);
+app.get('/', emotion.showall)
+
+// Rutas para el manejo de los Usuario
+app.get('/profesor_crear',function(req,res) {
+  res.render('usuarios/create-user');
+});
+app.get('/profile', user.show);
+app.get('/profesor_lista', user.showall);
+app.post('/crear_user', user.create);
+app.post('/user_remove', user.delete);
+
+// Rutas para el manejo de los Cursos
+app.get('/curso_lista', curso.showall);
+app.post('/crear', curso.create);
+app.get('/curso_crear',function(req,res) {
+  res.render('cursos/crear-curso');
+});
+
+// Rutas para el manejo de las emociones
+app.get('/ver_emociones', emotion.showallEmotion);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
