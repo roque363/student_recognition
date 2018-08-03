@@ -15,21 +15,21 @@ var form_validation = function() {
                     jQuery(e).closest(".form-group").removeClass("is-invalid"), jQuery(e).remove()
                 },
                 rules: {
-                    "val-username": {
+                    "val_first_name": {
                         required: !0,
                         minlength: 3
                     },
-                    "val-email": {
+                    "val_email": {
                         required: !0,
                         email: !0
                     },
-                    "val-password": {
+                    "val_password": {
                         required: !0,
-                        minlength: 5
+                        minlength: 6
                     },
-                    "val-confirm-password": {
+                    "val_confirm_password": {
                         required: !0,
-                        equalTo: "#val-password"
+                        equalTo: "#val_password"
                     },
                     "val-select2": {
                         required: !0
@@ -74,19 +74,19 @@ var form_validation = function() {
                     }
                 },
                 messages: {
-                    "val-username": {
-                        required: "Please enter a username",
-                        minlength: "Your username must consist of at least 3 characters"
+                    "val_first_name": {
+                        required: "Por favor complete el campo",
+                        minlength: "Debe constar de al menos 3 caracteres"
                     },
-                    "val-email": "Please enter a valid email address",
-                    "val-password": {
-                        required: "Please provide a password",
-                        minlength: "Your password must be at least 5 characters long"
+                    "val_email": "Introduce un correo electrónico válido.",
+                    "val_password": {
+                        required: "Por favor ingrese una contraseña",
+                        minlength: "Su contraseña debe tener al menos 6 caracteres"
                     },
-                    "val-confirm-password": {
-                        required: "Please provide a password",
-                        minlength: "Your password must be at least 5 characters long",
-                        equalTo: "Please enter the same password as above"
+                    "val_confirm_password": {
+                        required: "Por favor ingrese una contraseña",
+                        minlength: "Su contraseña debe tener al menos 6 caracteres",
+                        equalTo: "Por favor ingrese la misma contraseña que arriba"
                     },
                     "val-select2": "Please select a value!",
                     "val-select2-multiple": "Please select at least 2 values!",

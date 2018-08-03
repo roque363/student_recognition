@@ -104,19 +104,6 @@
 		hideHover: 'auto'
 	} );
 	// Morris donut chart
-	
-
-	Morris.Bar( {
-		element: 'morris-bar-chart2',
-		data: item,
-		xkey: 'y',
-		ykeys: [ 'a', 'b', 'c' ],
-		labels: [ 'A', 'B', 'C' ],
-		barColors: [ '#26DAD2', '#fc6180', '#4680ff' ],
-		hideHover: 'auto',
-		gridLineColor: '#eef0f2',
-		resize: true
-	} );
 
 	Morris.Donut( {
 		element: 'morris-donut-chart',

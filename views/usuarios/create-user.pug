@@ -63,56 +63,6 @@ html(lang="es")
 									input.form-control(type='text', placeholder='Search here')
 									a.srh-btn
 										i.ti-close
-							// Comment
-							li.nav-item.dropdown
-								a.nav-link.dropdown-toggle.text-muted.text-muted(href='#', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
-									i.fa.fa-bell
-									.notify
-										span.heartbit
-										span.point
-								.dropdown-menu.dropdown-menu-right.mailbox.animated.zoomIn
-									ul
-										li
-											.drop-title Notifications
-										li
-											.message-center
-												// Message
-												a(href='#')
-													.btn.btn-danger.btn-circle.m-r-10
-														i.fa.fa-link
-													.mail-contnet
-														h5 This is title
-														span.mail-desc Just see the my new admin!
-														span.time 9:30 AM
-												// Message
-												a(href='#')
-													.btn.btn-success.btn-circle.m-r-10
-														i.ti-calendar
-													.mail-contnet
-														h5 This is another title
-														span.mail-desc Just a reminder that you have event
-														span.time 9:10 AM
-												// Message
-												a(href='#')
-													.btn.btn-info.btn-circle.m-r-10
-														i.ti-settings
-													.mail-contnet
-														h5 This is title
-														span.mail-desc You can customize this template as you want
-														span.time 9:08 AM
-												// Message
-												a(href='#')
-													.btn.btn-primary.btn-circle.m-r-10
-														i.ti-user
-													.mail-contnet
-														h5 This is another title
-														span.mail-desc Just see the my admin!
-														span.time 9:02 AM
-										li
-											a.nav-link.text-center(href='javascript:void(0);')
-												strong Check all notifications
-												i.fa.fa-angle-right
-							// End Comment
 							// Profile
 							li.nav-item.dropdown
 								a.nav-link.dropdown-toggle.text-muted(href='#', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
@@ -197,41 +147,42 @@ html(lang="es")
 						.col-lg-6
 							.card.card-outline-primary
 								.card-header
-									h4.m-b-0.text-white Datos del profesor
+									h4.m-b-0.text-white Datos del usuario
 								.card-body
 									.form-validation
 										hr
+										// Para cambiar la validacion de lo campos ir a /form-validation/jquery.validate-init.js
 										form.form-valide(action="/crear_user" method="post")
 											.form-group.row
 												label.col-lg-4.col-form-label(for="val_first_name")
 													| Nombre
-													span.text-danger 
+													span.text-danger *
 												.col-lg-6
-													input#val_first_name.form-control(type="text" name="val_first_name" placeholder="Ingresar un nombre..")
+													input#val_first_name.form-control(type="text" name="val_first_name")
 											.form-group.row
 												label.col-lg-4.col-form-label(for="val_last_name")
 													| Apellido
 													span.text-danger 
 												.col-lg-6
-													input#val_last_name.form-control(type="text" name="val_last_name" placeholder="Ingresar un apellido..")
+													input#val_last_name.form-control(type="text" name="val_last_name")
 											.form-group.row
 												label.col-lg-4.col-form-label(for="val_email")
 													| E-mail
 													span.text-danger *
 												.col-lg-6
-													input#val_email.form-control(type="text" name="val_email" placeholder="Ingresar un email valido..")
+													input#val_email.form-control(type="email" name="val_email")
 											.form-group.row
 												label.col-lg-4.col-form-label(for="val_password")
 													| Contraseña
 													span.text-danger *
 												.col-lg-6
-													input#val_password.form-control(type="password" name="val_password" placeholder="..")
+													input#val_password.form-control(type="password" name="val_password")
 											.form-group.row
 												label.col-lg-4.col-form-label(for="val_confirm_password")
 													| Confirmar contraseña
 													span.text-danger *
 												.col-lg-6
-													input#val_confirm-password.form-control(type="password" name="val_confirm_password" placeholder="..")
+													input#val_confirm_password.form-control(type="password" name="val_confirm_password")
 											.form-group.row
 												label.col-lg-4.col-form-label(for="val_tipo")
 													| Tipo de usuario

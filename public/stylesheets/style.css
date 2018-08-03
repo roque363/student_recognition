@@ -88,6 +88,12 @@
 }
 
 /*Estilos customisados*/
+/*Estilo del botton de cancelar*/
+.btn-cancelar{
+  margin-right: 10px;
+}
+
+/* Tabla de usuarios */
 .opciones{
   width: 10%;
   word-wrap: break-word;

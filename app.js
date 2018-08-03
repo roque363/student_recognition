@@ -7,15 +7,27 @@ var firebase = require("firebase");
 require('firebase/auth');
 require('firebase/database');
 
+var app = express();
+
+// Agrega las rutas
 var usersRouter = require('./routes/users');
 var userAuth = require("./auth.js");
 var user = require("./models/user.js");
 var curso = require("./models/curso.js");
 var emotion = require("./models/emotion.js");
 
-var app = express();
+// Agrega el SDK
+var admin = require('firebase-admin');
+var serviceAccount = require('./serviceAccountKey/recognizedios-firebase-adminsdk-m8jeg-3e08141bbe.json');
 
-// Initialize Firebase
+// Inicializa el SDK
+admin.initializeApp({
+  credential: admin.credential.cert(serviceAccount),
+  databaseURL: "https://recognizedios.firebaseio.com"
+});
+user.setAdmin(admin);
+
+// Inicializa Firebase
 var config = {
   apiKey: "AIzaSyCHfnjNm-3t43KqZukO4UvgnW4Puivi7xo",
   authDomain: "recognizedios.firebaseapp.com",
@@ -25,6 +37,7 @@ var config = {
   messagingSenderId: "251451876031"
 };
 firebase.initializeApp(config);
+
 userAuth.setModel(firebase);
 user.setModel(firebase);
 curso.setModel(firebase);
@@ -32,7 +45,7 @@ emotion.setModel(firebase);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
+app.set('view engine', 'pug');
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -56,18 +69,21 @@ app.post('/auth', userAuth.login);
 app.get('/salir', userAuth.logout);
 
 //app.get('/', userAuth.prueba2);
-app.get('/', emotion.showall)
+app.get('/', emotion.showall);
+app.get('/get_emotions', emotion.showEmotion);
 
-// Rutas para el manejo de los Usuario
+// Usuarios
+app.get('/profile', user.showCurrentUser);
 app.get('/profesor_crear',function(req,res) {
   res.render('usuarios/create-user');
 });
-app.get('/profile', user.show);
+app.get('/user_detail', user.showOne);
+app.post('/user_edit', user.update);
 app.get('/profesor_lista', user.showall);
 app.post('/crear_user', user.create);
 app.post('/user_remove', user.delete);
 
-// Rutas para el manejo de los Cursos
+// Cursos
 app.get('/curso_lista', curso.showall);
 app.post('/crear', curso.create);
 app.get('/curso_crear',function(req,res) {
