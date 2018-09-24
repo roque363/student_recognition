@@ -3,29 +3,28 @@ extends layout
 block content
     // Preloader - style you can find in spinners.css
     .preloader
-      svg.circular(viewbox="25 25 50 50")
-        circle.path(cx="50", cy="50", r="20", fill="none", stroke-width="2", stroke-miterlimit="10")
+        svg.circular(viewbox="25 25 50 50")
+            circle.path(cx="50", cy="50", r="20", fill="none", stroke-width="2", stroke-miterlimit="10")
     // Main wrapper
     #main-wrapper
-      .unix-login
-        .container-fluid
-          .row.justify-content-center
-            .col-lg-4
-              .login-content.card
-                .login-form
-                  h4 Iniciar Sesión
-                  |                                 
-                  form(method="post", action="/auth") 
-                    .form-group
-                      label(for='txtEmail') Correo Electrónico
-                      |                                         
-                      input#txtEmail.form-control(type="email", name='txtEmail')
-                    |                                     
-                    .form-group
-                      label(for='txtPassword') Contraseña
-                      |                                         
-                      input#txtPassword.form-control(type="password", name='txtPassword')
-                    |                                     
-                    button#btnLogin.btn.btn-primary.btn-flat(type='submit') Iniciar Sesión
-    // End 
- 
+        .unix-login
+            .container-fluid
+                .row.justify-content-center
+                    .col-lg-4
+                        .login-content.card
+                            .login-form
+                                h4 Iniciar Sesión
+                                |                                 
+                                form(method="post", action="/auth") 
+                                    .form-group
+                                        label(for='txtEmail') Correo Electrónico
+                                        |                                         
+                                        input#txtEmail.form-control(type="email", name='txtEmail')
+                                    |                                     
+                                    .form-group
+                                        label(for='txtPassword') Contraseña
+                                        |                                         
+                                        input#txtPassword.form-control(type="password", name='txtPassword')
+                                    |                                     
+                                    button#btnLogin.btn.btn-primary.btn-flat(type='submit') Iniciar Sesión
+    // End
